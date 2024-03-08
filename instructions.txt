@@ -1,0 +1,9 @@
+finished video - 6
+----------------------------------------------------------------------------------------------------------------------
+day - 1 : 
+
+install json-server globally for creating fake api
+cmd : npm install -g json-server
+
+watch or run json server to watch db.json file 
+cmd : json-server --watch db.json (apply this command to parent folder of db.json file)
