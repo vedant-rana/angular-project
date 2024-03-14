@@ -1,0 +1,39 @@
+.popular-product-img {
+  object-fit: contain;
+  height: 500px;
+}
+
+.img-div {
+  display: flex;
+  justify-content: center;
+}
+
+.product-item {
+  margin-bottom: 40px;
+  border: 1px solid #ccc;
+}
+
+.product-item img {
+  width: 85%;
+  height: 250px;
+  object-fit: contain;
+}
+
+.product-item .product-details {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 15px;
+}
+
+.product-item .name-head {
+  font-size: 20px;
+  font-weight: 600;
+}
+.product-item h6 {
+  text-align: center;
+}
+.product-item .product-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}

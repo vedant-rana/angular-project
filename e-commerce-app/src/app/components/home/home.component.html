@@ -1,1 +1,47 @@
-<p>home works!</p>
+@if (popularProducts) {
+<ngb-carousel>
+  @for(item of popularProducts; track item.id){
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper img-div">
+      <img
+        class="popular-product-img"
+        [src]="item.image"
+        alt="Random first slide"
+      />
+    </div>
+    <div class="carousel-caption">
+      <h3>{{ item.name }}</h3>
+      <p>{{ item.description }}</p>
+    </div>
+  </ng-template>
+  }
+</ngb-carousel>
+}
+
+<div class="product-list-wrapper">
+  <h1>Trendy Products</h1>
+  <div class="row">
+    @for(item of trendyProducts; track item.id){
+    <div class="col-sm-3">
+      <div class="product-item">
+        <div class="img-div">
+          <img [src]="item.image" alt="product image" />
+        </div>
+        <div class="product-details">
+          <h6 class="name-head">{{ item.name }}</h6>
+          <div class="product-price">
+            <h6>Price:{{ item.price }}</h6>
+          </div>
+          <div class="product-color">
+            <h6>Color:{{ item.color }}</h6>
+          </div>
+        </div>
+        <div class="product-footer">
+          <!-- <a routerLink="/details/{{item.id}}">View Details</a> -->
+          <a href="">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</div>

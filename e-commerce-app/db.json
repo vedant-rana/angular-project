@@ -73,6 +73,51 @@
       "image": "https://cdn1.smartprix.com/rx-iUKbJYx4i-w1200-h1200/UKbJYx4i.jpg",
       "description": "Vivo V29 Pro with 16gb ram and 256gb Storage.",
       "id": "f9b7"
+    },
+    {
+      "id": "e78e",
+      "name": "Iqoo 9 ",
+      "price": 699,
+      "color": "White",
+      "category": "mobile",
+      "image": "https://asia-exstatic-vivofs.vivo.com/PSee2l50xoirPK7y/1701419586053/c26ca793c17f539c6d1dfb10b5b9d586.png",
+      "description": "Iqoo 9 with 16gb ram and 256gb Storage."
+    },
+    {
+      "id": "2fb4",
+      "name": "Realme 12 pro plus",
+      "price": 699,
+      "color": "Golden",
+      "category": "mobile",
+      "image": "https://i.gadgets360cdn.com/products/large/Realme-12-Pro-Plus-5G-DB-709x800-1706525309.jpg",
+      "description": "Realme 12 pro plus with 16gb ram and 256gb Storage."
+    },
+    {
+      "id": "a487",
+      "name": "Macbook Pro",
+      "price": 999,
+      "color": "White",
+      "category": "Laptop",
+      "image": "https://www.apple.com/newsroom/images/product/mac/standard/Apple_MacBook-Pro_14-16-inch_10182021_big.jpg.large.jpg",
+      "description": "Macbook Pro with 16gb ram and 256gb Storage."
+    },
+    {
+      "id": "8d4f",
+      "name": "Sony Barvia 43' TV",
+      "price": 1299,
+      "color": "Black",
+      "category": "television",
+      "image": "https://m.media-amazon.com/images/I/510uaaRthOL._SY300_SX300_QL70_FMwebp_.jpg",
+      "description": "Sony Barvia 43' 4k TV"
+    },
+    {
+      "id": "ac5b",
+      "name": "Asus ROG ",
+      "price": 899,
+      "color": "Black",
+      "category": "laptop",
+      "image": "https://www.asus.com/media/Odin/Websites/global/ProductLine/20200824120814.jpg",
+      "description": "Asus ROG with 16gb ram and 256gb Storage."
     }
   ]
 }
