@@ -5,6 +5,74 @@
       "name": "Vedant",
       "email": "ved@gmail.com",
       "password": "123456"
+    },
+    {
+      "id": "480e",
+      "name": "john",
+      "email": "john@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "bba2",
+      "name": "jane",
+      "email": "jane@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "c252",
+      "name": "vedant",
+      "email": "abc@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "ac6e",
+      "name": "new user",
+      "email": "msdfactor365@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "1083",
+      "name": "jabda",
+      "email": "cakex96533@alibrs.com",
+      "password": "23456"
+    }
+  ],
+  "products": [
+    {
+      "id": "d631",
+      "name": "Iphone 15 pro",
+      "price": "999",
+      "category": "mobile",
+      "color": "black",
+      "image": "https://m.media-amazon.com/images/I/81SigpJN1KL._AC_UF1000,1000_QL80_.jpg",
+      "description": "iphone 15 pro with A17 bionic chip and 256gb Storage."
+    },
+    {
+      "id": "7f75",
+      "name": "Samsung s24 ultra",
+      "price": 999,
+      "color": "black",
+      "category": "mobile",
+      "image": "https://i.gadgets360cdn.com/products/large/galaxy-s24-ultra-797x800-1705519965.jpg?downsize=*:360",
+      "description": "Galaxy s24 Ultra with 16gb ram and 256gb Storage."
+    },
+    {
+      "id": "3249",
+      "name": "Oneplus 12R",
+      "price": 899,
+      "color": "Blue",
+      "category": "mobile",
+      "image": "https://cdn1.smartprix.com/rx-i6kVW7ULe-w420-h420/oneplus-12r.jpg",
+      "description": "Oneplus 12R with 16gb ram and 256gb Storage."
+    },
+    {
+      "name": "Vivo V29 Pro",
+      "price": 749,
+      "color": "Sky Blue",
+      "category": "mobile",
+      "image": "https://cdn1.smartprix.com/rx-iUKbJYx4i-w1200-h1200/UKbJYx4i.jpg",
+      "description": "Vivo V29 Pro with 16gb ram and 256gb Storage.",
+      "id": "f9b7"
     }
   ]
 }

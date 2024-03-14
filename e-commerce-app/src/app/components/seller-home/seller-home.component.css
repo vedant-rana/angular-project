@@ -1,0 +1,41 @@
+table {
+    text-align: center;
+    color: blueviolet;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+img {
+    height: 100px;
+    /* width: 100px; */
+}
+
+table td,
+table th {
+    border: 1px solid blueviolet;
+    padding: 10px;
+    min-width: 160pxs;
+}
+
+.adjust-update-link {
+    margin-left: 10px;
+}
+
+.action-button {
+    background-color: white;
+    color: blueviolet;
+    border: 1px solid blueviolet;
+    font-size: 1.3rem;
+    cursor: pointer;
+    padding: 4px 17px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 0.5rem;
+    transition: all ease .4s;
+    text-decoration: none;
+}
+
+.action-button:hover {
+    background-color: blueviolet;
+    color: white;
+}

@@ -10,5 +10,6 @@
     color: blueviolet;
     font-size: 14px;
     margin-top: 20px;
-    text-align: left;
+    text-align: right;
+    cursor: pointer;
 }
