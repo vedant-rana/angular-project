@@ -20,7 +20,13 @@
       </div>
       <h6>Category : {{ productData.category }}</h6>
       <h6>{{ productData.description }}</h6>
+      @if(!removeCartEnable){
       <button class="form-button" (click)="addToCart()">Add to Cart</button>
+      }@else {
+      <button class="form-button" (click)="removeFromCart()">
+        Remove From Cart
+      </button>
+      }
       <button class="form-button">Buy Now</button>
       <div class="quantity-group">
         <button (click)="handleQuantitiy('sub')">-</button>

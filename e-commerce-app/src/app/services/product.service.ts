@@ -1,11 +1,13 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Product } from '../Models/data-types';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
+  cartData = new EventEmitter<Product[] | []>();
+
   constructor(private http: HttpClient) {}
 
   createProduct(data: Product) {
@@ -41,20 +43,36 @@ export class ProductService {
     return this.http.get<Product[]>(`http://localhost:3000/products?_limit=8`);
   }
 
-  getSerchedProducts(query : string) {
-    return this.http.get<Product[]>(`http://localhost:3000/products?category=${query}`);
+  getSerchedProducts(query: string) {
+    return this.http.get<Product[]>(
+      `http://localhost:3000/products?category=${query}`
+    );
   }
 
-  localAddToCart(data : Product){
+  localAddToCart(data: Product) {
     let localCartData: Product[] = [];
-    let localStorageCartData = localStorage.getItem("localCart");
+    let localStorageCartData = localStorage.getItem('localCart');
 
-    if(!localStorageCartData){
-      localStorage.setItem("localCart", JSON.stringify(data));
-    }else{
+    if (!localStorageCartData) {
+      localStorage.setItem('localCart', JSON.stringify([data]));
+    } else {
       localCartData = JSON.parse(localStorageCartData);
+
       localCartData.push(data);
-      localStorage.setItem("localCart", JSON.stringify(localCartData));
+      localStorage.setItem('localCart', JSON.stringify(localCartData));
     }
+    this.cartData.emit(localCartData);
+  }
+
+  localRemoveFromCart(data: Product) {
+    let localCartData: Product[] = [];
+    let localStorageCartData = localStorage.getItem('localCart');
+
+    if (localStorageCartData) {
+      localCartData = JSON.parse(localStorageCartData);
+      localCartData = localCartData.filter((item) => item.id !== data.id);
+      localStorage.setItem('localCart', JSON.stringify(localCartData));
+    }
+    this.cartData.emit(localCartData);
   }
 }
