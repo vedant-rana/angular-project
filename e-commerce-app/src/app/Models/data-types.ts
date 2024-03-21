@@ -1,11 +1,11 @@
 export interface SignUp{
-    name:string, 
-    email:string, 
+    name:string,
+    email:string,
     password: string
 }
 
 export interface Login{
-    email:string, 
+    email:string,
     password: string
 }
 
@@ -16,5 +16,6 @@ export interface Product{
     category:string,
     color:string,
     image:string,
-    description:string
+    description:string,
+    quantity?: undefined| number
 }

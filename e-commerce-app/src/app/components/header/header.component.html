@@ -1,21 +1,48 @@
 <nav class="nav">
-    <h1><a routerLink="/">E-Commerce</a></h1>
-    <div *ngIf="menuType === 'default'" class="nav-search">
-        <input type="text" name="" placeholder="Search for Products">
-        <button>Search</button>
-    </div>
-    <div [ngSwitch]="menuType">
-        <ul *ngSwitchCase="'default'">
-            <li><a routerLink="/">Home</a></li>
-            <li><a routerLink="/seller-auth">Seller</a></li>
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Cart(0)</a></li>
-        </ul>
-        <ul *ngSwitchCase="'seller'">
-            <li><a routerLink="/seller-home">Products</a></li>
-            <li><a routerLink="/seller-add-product">Add Product</a></li>
-            <li><a (click)="logout()">Logout</a></li>
-            <li><a href="#">{{sellerName | titlecase}}</a></li>
-        </ul>
-    </div>
+  <h1><a routerLink="/">E-Commerce</a></h1>
+  <div *ngIf="menuType === 'default'" class="nav-search">
+    <input
+      type="text"
+      #searchInput
+      (keyup)="getSerachedProducts($event)"
+      (blur)="hideSearch()"
+      name=""
+      placeholder="Search for Products"
+    />
+    <button (click)="submitSearch(searchInput.value)">Search</button>
+    @if(searchedProducts){
+    <ul class="suggested-search">
+      @for(item of searchedProducts; track item.id){
+      <li>
+        <a (mousedown)="resirectToDetails(item.id)">{{ item.name }}</a>
+      </li>
+      }
+    </ul>
+    }
+  </div>
+
+  <div [ngSwitch]="menuType">
+    <ul *ngSwitchCase="'default'">
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/seller-auth">Seller</a></li>
+      <li><a routerLink="/user-auth">Login / Sign-up</a></li>
+      <li><a href="#">Cart(0)</a></li>
+    </ul>
+    <ul *ngSwitchCase="'user'">
+      <li><a routerLink="/">Home</a></li>
+      <li>
+        <a href="#">{{ userName | titlecase }}</a>
+      </li>
+      <li><a (click)="userLogout()">Logout</a></li>
+      <li><a href="#">Cart(0)</a></li>
+    </ul>
+    <ul *ngSwitchCase="'seller'">
+      <li><a routerLink="/seller-home">Products</a></li>
+      <li><a routerLink="/seller-add-product">Add Product</a></li>
+      <li>
+        <a href="#">{{ sellerName | titlecase }}</a>
+      </li>
+      <li><a (click)="sellerLogout()">Logout</a></li>
+    </ul>
+  </div>
 </nav>

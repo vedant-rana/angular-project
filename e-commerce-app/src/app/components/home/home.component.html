@@ -3,11 +3,13 @@
   @for(item of popularProducts; track item.id){
   <ng-template ngbSlide>
     <div class="picsum-img-wrapper img-div">
-      <img
-        class="popular-product-img"
-        [src]="item.image"
-        alt="Random first slide"
-      />
+      <a routerLink="/details/{{ item.id }}">
+        <img
+          class="popular-product-img"
+          [src]="item.image"
+          alt="Random first slide"
+        />
+      </a>
     </div>
     <div class="carousel-caption">
       <h3>{{ item.name }}</h3>
@@ -37,7 +39,7 @@
           </div>
         </div>
         <div class="product-footer">
-          <!-- <a routerLink="/details/{{item.id}}">View Details</a> -->
+          <a routerLink="/details/{{ item.id }}">View Details</a>
           <a href="">Add to Cart</a>
         </div>
       </div>

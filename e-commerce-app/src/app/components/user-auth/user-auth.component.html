@@ -1,0 +1,105 @@
+<div class="user-auth">
+  @if(!userLogin){
+  <h1 class="title-h1">User Sign-up</h1>
+  <form
+    #userSignup="ngForm"
+    class="common-form"
+    (ngSubmit)="signUp(userSignup.value)"
+  >
+    <input
+      type="text"
+      class="form-input"
+      placeholder="Enter user name"
+      name="name"
+      ngModel
+      #nameInput="ngModel"
+      required
+    />
+    <p class="invalid-input">
+      @if(nameInput.invalid && nameInput.touched){ Please Enter Name }
+    </p>
+
+    <input
+      type="email"
+      class="form-input"
+      placeholder="Enter email"
+      name="email"
+      ngModel
+      #emailInput="ngModel"
+      required
+      email
+    />
+    <p class="invalid-input">
+      @if(emailInput.invalid && emailInput.touched){ Please Enter a valid email
+      }
+    </p>
+
+    <input
+      type="password"
+      class="form-input"
+      placeholder="Enter Password"
+      name="password"
+      ngModel
+      #passwordInput="ngModel"
+      required
+      minlength="6"
+    />
+    <p class="invalid-input">
+      @if(passwordInput.invalid && passwordInput.touched){ Password must be at
+      least 6 characters }
+    </p>
+
+    <button class="form-button" [disabled]="userSignup.invalid">Sign Up</button>
+    <a class="auth-toggle-link" (click)="openLogin()"
+      >Already Have an Account ? Click to Login</a
+    >
+  </form>
+
+  } @if(userLogin){
+  <h1 class="title-h1">User Login</h1>
+  <form
+    #userLogin="ngForm"
+    class="common-form"
+    (ngSubmit)="login(userLogin.value)"
+  >
+    @if(errorMessage.length >0){
+    <p class="error-p">{{ errorMessage }}</p>
+    }
+    <input
+      type="email"
+      class="form-input"
+      placeholder="Enter email"
+      name="email"
+      ngModel
+      #loginemail="ngModel"
+      required
+      email
+    />
+    <p class="invalid-input">
+      <span
+        >@if(loginemail.invalid && loginemail.touched){Please Enter Email}</span
+      >
+    </p>
+    <input
+      type="password"
+      class="form-input"
+      placeholder="Enter Password"
+      name="password"
+      ngModel
+      #loginpassword="ngModel"
+      required
+      minlength="6"
+    />
+    <p class="invalid-input">
+      <span
+        >@if(loginpassword.invalid && loginpassword.touched){Please Enter
+        Password}</span
+      >
+    </p>
+    <button class="form-button" [disabled]="userLogin.invalid">Login</button>
+    <a class="auth-toggle-link" (click)="openSignUp()"
+      >Don't Have an Account ? Click to Register</a
+    >
+  </form>
+  }
+</div>

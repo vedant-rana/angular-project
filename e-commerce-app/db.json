@@ -39,13 +39,13 @@
   ],
   "products": [
     {
-      "id": "d631",
       "name": "Iphone 15 pro",
       "price": "999",
-      "category": "mobile",
       "color": "black",
+      "category": "mobile",
       "image": "https://m.media-amazon.com/images/I/81SigpJN1KL._AC_UF1000,1000_QL80_.jpg",
-      "description": "iphone 15 pro with A17 bionic chip and 256gb Storage."
+      "description": "iphone 15 pro with A17 bionic chip and 256gb Storage.",
+      "id": "d631"
     },
     {
       "id": "7f75",
@@ -57,13 +57,13 @@
       "description": "Galaxy s24 Ultra with 16gb ram and 256gb Storage."
     },
     {
-      "id": "3249",
       "name": "Oneplus 12R",
-      "price": 899,
-      "color": "Blue",
+      "price": "899",
+      "color": "blue",
       "category": "mobile",
       "image": "https://cdn1.smartprix.com/rx-i6kVW7ULe-w420-h420/oneplus-12r.jpg",
-      "description": "Oneplus 12R with 16gb ram and 256gb Storage."
+      "description": "Oneplus 12R with 16gb ram and 256gb Storage.",
+      "id": "3249"
     },
     {
       "name": "Vivo V29 Pro",
@@ -75,13 +75,13 @@
       "id": "f9b7"
     },
     {
-      "id": "e78e",
       "name": "Iqoo 9 ",
-      "price": 699,
-      "color": "White",
+      "price": "699",
+      "color": "white",
       "category": "mobile",
       "image": "https://asia-exstatic-vivofs.vivo.com/PSee2l50xoirPK7y/1701419586053/c26ca793c17f539c6d1dfb10b5b9d586.png",
-      "description": "Iqoo 9 with 16gb ram and 256gb Storage."
+      "description": "Iqoo 9 with 16gb ram and 256gb Storage.",
+      "id": "e78e"
     },
     {
       "id": "2fb4",
@@ -118,6 +118,20 @@
       "category": "laptop",
       "image": "https://www.asus.com/media/Odin/Websites/global/ProductLine/20200824120814.jpg",
       "description": "Asus ROG with 16gb ram and 256gb Storage."
+    }
+  ],
+  "users": [
+    {
+      "id": "1926",
+      "name": "jane doe",
+      "email": "jane@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "dcc6",
+      "name": "john doe",
+      "email": "john@gmail.com",
+      "password": "123456"
     }
   ]
 }

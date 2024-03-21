@@ -1,0 +1,33 @@
+@if(productData){
+<div class="row product-details">
+  <div class="col-sm-6">
+    <img
+      src="{{ productData.image }}"
+      alt="{{ productData.name }}"
+      class="product-img"
+    />
+  </div>
+  <div class="col-sm-6">
+    <div class="details">
+      <h1>{{ productData.name }}</h1>
+      <h3>Price : {{ productData.price | currency }}</h3>
+      <div>
+        Color :
+        <h5
+          [style.backgroundColor]="productData.color"
+          class="product-color"
+        ></h5>
+      </div>
+      <h6>Category : {{ productData.category }}</h6>
+      <h6>{{ productData.description }}</h6>
+      <button class="form-button" (click)="addToCart()">Add to Cart</button>
+      <button class="form-button">Buy Now</button>
+      <div class="quantity-group">
+        <button (click)="handleQuantitiy('sub')">-</button>
+        <input type="number" value="{{ productQuantity }}" />
+        <button (click)="handleQuantitiy('add')">+</button>
+      </div>
+    </div>
+  </div>
+</div>
+}

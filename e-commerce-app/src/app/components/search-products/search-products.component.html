@@ -1,0 +1,27 @@
+@if(searchProducts){ @for(product of searchProducts; track product.id){
+<div class="row search-item">
+  <div class="col-sm-3">
+    <a routerLink="/details/{{ product.id }}">
+      <img src="{{ product.image }}" alt="{{ product.name }}" />
+    </a>
+  </div>
+  <div class="col-sm-8 details">
+    <h6>
+      <a routerLink="/details/{{ product.id }}">{{ product.name }} </a>
+    </h6>
+    <p>
+      <b>Price : {{ product.price }}</b>
+    </p>
+    <p>
+      <span>Color : {{ product.color }}</span
+      ><span>Category : {{ product.category }}</span>
+    </p>
+    <p>{{ product.description }}</p>
+  </div>
+</div>
+} }@else {
+<div class="row text-center mt-5">
+  <h6>Products not available yet</h6>
+</div>
+
+}
