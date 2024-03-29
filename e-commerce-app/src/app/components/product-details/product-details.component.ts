@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { ActivatedRoute } from '@angular/router';
-import { Product } from '../../Models/data-types';
+import { Cart, Product } from '../../Models/data-types';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -43,6 +43,20 @@ export class ProductDetailsComponent {
           this.removeCartEnable = false;
         }
       }
+
+      let user = localStorage.getItem('user');
+      if(user ){
+        let userId = user && JSON.parse(user).id;
+        this.productService.getCartListFromDB(userId);
+
+        this.productService.cartData.subscribe((cartProducts)=>{
+          let needToRemoveCart = cartProducts.filter((prod:Product)=> productId === prod.productId);
+
+          if(needToRemoveCart){
+            this.removeCartEnable = true;
+          }
+        })
+      }
     }
   }
 
@@ -57,9 +71,31 @@ export class ProductDetailsComponent {
   addToCart() {
     if (this.productData) {
       this.productData.quantity = this.productQuantity;
-      this.productService.localAddToCart(this.productData);
-      this.productQuantity = 1;
-      this.removeCartEnable = true;
+
+      if(!localStorage.getItem('user')) {
+        this.productService.localAddToCart(this.productData);
+        this.productQuantity = 1;
+        this.removeCartEnable = true;
+      }else{
+        let user = localStorage.getItem('user');
+        let userId = user && JSON.parse(user).id;
+
+        let cartData:Cart = {
+          ...this.productData,
+          userId,
+          productId: this.productData.id
+        }
+
+        delete cartData.id;
+
+        this.productService.addToCart(cartData).subscribe(data => {
+          if(data){
+            this.productService.getCartListFromDB(userId);
+            this.removeCartEnable=true;
+          }
+        });
+
+      }
     }
   }
 

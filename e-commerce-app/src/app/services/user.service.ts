@@ -27,8 +27,8 @@ export class UserService {
     .get(`http://localhost:3000/users?email=${data.email}&password=${data.password}`, {observe: 'response'})
     .subscribe((result:any) =>{
       if(result && result.body && result.body.length){
-        this.userAuthStatus.emit(true);
         localStorage.setItem('user', JSON.stringify(result.body[0]));
+        this.userAuthStatus.emit(true);
         this.router.navigate(['/']);
       }else{
         this.userAuthStatus.emit(false);

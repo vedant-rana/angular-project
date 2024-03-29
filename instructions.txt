@@ -7,3 +7,16 @@ cmd : npm install -g json-server
 
 watch or run json server to watch db.json file 
 cmd : json-server --watch db.json (apply this command to parent folder of db.json file)
+
+
+
+----------------------------------------------------------------------------------------------------------------------------
+Clone repo to local : git clone {git-repo link}
+
+Push to Git :   git add.
+                git commit -m 'commit-name'
+                git Push
+
+
+Pull from git : git stash 
+                git pull
